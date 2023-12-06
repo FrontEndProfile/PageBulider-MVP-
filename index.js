@@ -112,14 +112,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add custom styling based on component type
         component.classList.add(componentType);
 
-        // Add delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.className = 'btn btn-danger btn-sm ms-2';
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function () {
-          deleteComponent(component);
-        };
-        component.appendChild(deleteButton);
+        // // Add delete button
+        // const deleteButton = document.createElement('button');
+        // deleteButton.className = 'btn btn-danger btn-sm ms-2';
+        // deleteButton.textContent = 'Delete';
+        // deleteButton.onclick = function () {
+        //   deleteComponent(component);
+        // };
+        // component.appendChild(deleteButton);
   
         // Add drag start event listener
         component.addEventListener('dragstart', function (event) {
@@ -134,13 +134,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Function to delete a component
-    function deleteComponent(component) {
-      component.remove();
+    // // Function to delete a component
+    // function deleteComponent(component) {
+    //   component.remove();
 
-      // Save components to local storage after deletion
-      saveComponentsToLocalStorage();
-    }
+    //   // Save components to local storage after deletion
+    //   saveComponentsToLocalStorage();
+    // }
   
     // Function to save components to local storage
     function saveComponentsToLocalStorage() {
