@@ -1,0 +1,28 @@
+
+
+.component {
+    /* border: 1px solid rgba(0, 0, 0, 0.121); */
+    cursor: move;
+    border-radius: 0;
+}
+
+/* Custom styling for different component types */
+.component.header {
+    background-color: #87CEEB; /* Light Blue */
+}
+
+.component.footer {
+    background-color: #FFD700; /* Gold */
+}
+
+.component.card-sm {
+    background-color: #98FB98; /* Pale Green */
+}
+
+.component.card-full {
+    background-color: #FFA07A; /* Light Salmon */
+}
+
+.component.hero-banner {
+    background-color: #FF6347; /* Tomato */
+}

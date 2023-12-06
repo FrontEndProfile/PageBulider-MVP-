@@ -1,0 +1,52 @@
+[
+    {
+      "name": "Center Logo",
+      "type": "header",
+      "content": "<div class='header center-logo'>Your Center Logo HTML Content</div>",
+      "css": ".header.center-logo { /* Your CSS for center logo header */ }",
+      "js": "// Your JavaScript for center logo header"
+    },
+    {
+      "name": "Left Logo",
+      "type": "header",
+      "content": "<div class='header left-logo'>Your Left Logo HTML Content</div>",
+      "css": ".header.left-logo { /* Your CSS for left logo header */ }",
+      "js": "// Your JavaScript for left logo header"
+    },
+    {
+      "name": "Right Logo",
+      "type": "header",
+      "content": "<div class='header right-logo'>Your Right Logo HTML Content</div>",
+      "css": ".header.right-logo { /* Your CSS for right logo header */ }",
+      "js": "// Your JavaScript for right logo header"
+    },
+    {
+      "name": "Footer",
+      "type": "footer",
+      "content": "<div class='footer'>Your Footer HTML Content</div>",
+      "css": ".footer { /* Your CSS for footer */ }",
+      "js": "// Your JavaScript for footer"
+    },
+    {
+      "name": "Card Small",
+      "type": "card",
+      "content": "<div class='card small'>Your Small Card HTML Content</div>",
+      "css": ".card.small { /* Your CSS for small card */ }",
+      "js": "// Your JavaScript for small card"
+    },
+    {
+      "name": "Card Full",
+      "type": "card",
+      "content": "<div class='card full'>Your Full Card HTML Content</div>",
+      "css": ".card.full { /* Your CSS for full card */ }",
+      "js": "// Your JavaScript for full card"
+    },
+    {
+      "name": "Hero Banner",
+      "type": "hero",
+      "content": "<div class='hero-banner'>Your Hero Banner HTML Content</div>",
+      "css": ".hero-banner { /* Your CSS for hero banner */ }",
+      "js": "// Your JavaScript for hero banner"
+    }
+  ]
+  

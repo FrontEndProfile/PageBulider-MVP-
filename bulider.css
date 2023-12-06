@@ -1,0 +1,88 @@
+#menu-list {
+}
+
+#menu-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu-list li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.admin {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 12px;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(224, 224, 224);
+}
+.admin #menu-list {
+  max-width: 280px;
+  width: 100%;
+  background-color: rgb(187, 187, 187);
+  padding: 40px 20px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  height: 98vh;
+  max-height: 98vh;
+}
+.admin #page-builder {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  padding: 12px;
+  height: 98vh;
+  max-height: 98vh;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  position:relative;
+}
+/* Add your CSS styles here */
+/* Add your CSS styles here */
+
+.hidden {
+  display: none;
+}
+
+.header-variants {
+  list-style-type: none;
+  padding: 0;
+}
+
+.header-variants li {
+  cursor: pointer;
+}
+
+.header-variants input {
+  display: none;
+}
+
+.header-variants label {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.header-variants li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style for the radio button container */
+.radio-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the radio button label */
+.radio-label {
+  margin-bottom: 10px;
+}
