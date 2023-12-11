@@ -1,65 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <title>Simple Dropdown</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Offcanvas navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="bulider.css" />
+
+  <!-- Add this in the head section of your HTML -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+  <title>Page Builder</title>
+</head>
+<body class="admin">
+  <div id="menu-list">
+    <div class="accordion shadow-none" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button bg-white shadow-none border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-Header"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-Header"
+          >
+            Header
           </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </h2>
+        <div id="panelsStayOpen-Header" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="dropdown-item" data-component="headerBasic">
+              Navbar Basic
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+            <div class="dropdown-item" data-component="offcanvasBasic">
+              Offcanvas Basic
             </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button bg-white shadow-none border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-Footer"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-Footer"
+          >
+            Footer
+          </button>
+        </h2>
+        <div id="panelsStayOpen-Footer" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <!-- Add more Bootstrap components for Footer as needed -->
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button bg-white shadow-none border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-Cards"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-Cards"
+          >
+            Cards
+          </button>
+        </h2>
+        <div id="panelsStayOpen-Cards" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <!-- Add more Bootstrap components for Cards as needed -->
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button bg-white shadow-none border-bottom"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-Banners"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-Banners"
+          >
+            Banners
+          </button>
+        </h2>
+        <div id="panelsStayOpen-Banners" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <h1>trest</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-builder">
+    <!-- Components will be added here -->
+  </div>
+
+  <!-- Include Bootstrap JavaScript files -->
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuList = document.getElementById("menu-list");
+    // console.log("Menu List Element:", menuList);
+    const pageBuilder = document.getElementById("page-builder");
+
+    let selectedComponent = null;
+
+    const bootstrapComponents = {
+      headerBasic: `<header> <nav class="navbar navbar-expand-lg bg-white"> <div class="container-fluid"> <a class="navbar-brand" href="#">Navbar</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" > <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarSupportedContent"> <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Home</a> </li> <li class="nav-item"> <a class="nav-link" href="#">About</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li> </ul> </div> </div> </nav> </header>`,
+      offcanvasBasic: `<header> <nav class="navbar bg-white position-relative"> <div class="container-fluid"> <a class="navbar-brand" href="#">Offcanvas navbar</a> <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel"> <div class="offcanvas-header"> <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> </div> <div class="offcanvas-body"> <ul class="navbar-nav justify-content-end flex-grow-1 pe-3"> <li class="nav-item"> <a class="nav-link active" aria-current="page" href="#">Home</a> </li> <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li> <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a> <ul class="dropdown-menu"> <li><a class="dropdown-item" href="#">Action</a></li> <li><a class="dropdown-item" href="#">Another action</a></li> <li> <hr class="dropdown-divider"> </li> <li><a class="dropdown-item" href="#">Something else here</a></li> </ul> </li> </ul> <form class="d-flex mt-3" role="search"> <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> <button class="btn btn-outline-success" type="submit">Search</button> </form> </div> </div> </div> </nav> </header>`,
+      button: `<button type="button" class="btn btn-primary">Button</button>`,
+      alert: `<div class="alert alert-warning" role="alert">This is a warning alert</div>`,
+      // Add more components as needed
+    };
+
+    const saveComponentsToLocalStorage = () => {
+  const components = Array.from(pageBuilder.children).map(
+    (child) => child.outerHTML
+  );
+  console.log("Components to be saved:", components);
+  localStorage.setItem("pageBuilderComponents", JSON.stringify(components));
+  console.log("Local Storage Updated"); // Add this line to log when local storage is updated
+};
+
+
+    const createBootstrapComponent = (componentType) => {
+      const componentHTML = bootstrapComponents[componentType];
+
+      if (componentHTML) {
+        const component = document.createElement("div");
+        component.className = "component";
+        component.draggable = true;
+        component.innerHTML = componentHTML;
+
+        component.classList.add(componentType);
+
+        component.addEventListener("dragstart", function (event) {
+          console.log("Drag Start");
+          event.dataTransfer.setData("text/plain", "");
+        });
+
+        component.addEventListener("click", function (event) {
+          handleComponentSelection(component);
+        });
+
+        // Add Delete and Edit buttons when creating the component
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.className = "btn btn-danger btn-sm";
+        deleteButton.style.display = "none";
+        deleteButton.addEventListener("click", function () {
+          component.remove();
+          selectedComponent = null;
+          saveComponentsToLocalStorage();
+          updateButtonsVisibility(); // Add this line to ensure buttons are updated after deletion
+        });
+        component.appendChild(deleteButton);
+
+        const editButton = document.createElement("button");
+        editButton.innerText = "Edit";
+        editButton.className = "btn btn-warning btn-sm";
+        editButton.style.display = "none";
+        editButton.addEventListener("click", function () {
+          // Implement your edit logic here
+          console.log(`Editing ${componentType}`);
+        });
+        component.appendChild(editButton);
+
+        pageBuilder.appendChild(component);
+        saveComponentsToLocalStorage();
+
+        // Ensure buttons are visible when adding a new component
+        handleComponentSelection(component);
+      }
+    };
+
+    const handleComponentSelection = (component) => {
+      if (selectedComponent) {
+        selectedComponent.classList.remove("selected");
+        updateButtonsVisibility();
+      }
+
+      if (selectedComponent !== component) {
+        component.classList.add("selected");
+        selectedComponent = component;
+        updateButtonsVisibility();
+      } else {
+        selectedComponent = null;
+      }
+    };
+
+    const updateButtonsVisibility = () => {
+      const components = document.querySelectorAll(".component");
+      components.forEach((component) => {
+        const deleteButton = component.querySelector(".btn-danger");
+        const editButton = component.querySelector(".btn-warning");
+
+        if (deleteButton && editButton) {
+          if (selectedComponent === component) {
+            component.classList.add("selected");
+            deleteButton.style.display = "block";
+            editButton.style.display = "block";
+          } else {
+            component.classList.remove("selected");
+            deleteButton.style.display = "none";
+            editButton.style.display = "none";
+          }
+        }
+      });
+    };
+
+    const attachEventListeners = () => {
+  document.addEventListener("click", function (event) {
+    console.log("Document click event");
+    let clickedComponent = event.target.closest(".component");
+
+    if (!clickedComponent && selectedComponent) {
+      selectedComponent.classList.remove("selected");
+      selectedComponent = null;
+      updateButtonsVisibility();
+    }
+  });
+
+  pageBuilder.addEventListener("click", function (event) {
+    const clickedComponent = event.target.closest(".component");
+    if (clickedComponent) {
+      handleComponentSelection(clickedComponent);
+    }
+  });
+
+  menuList.addEventListener("click", function (event) {
+    if (event.target.tagName === "DIV") {
+      const componentType = event.target.dataset.component;
+      createBootstrapComponent(componentType);
+    }
+  });
+
+  new Sortable(pageBuilder, {
+    animation: 150,
+    handle: ".component",
+    onUpdate: function () {
+      saveComponentsToLocalStorage();
+    },
+  });
+
+  pageBuilder.addEventListener("dragover", function (event) {
+    event.preventDefault();
+  });
+};
+
+
+    // Load components from local storage when the page loads
+    const savedComponents = JSON.parse(
+      localStorage.getItem("pageBuilderComponents")
+    );
+    if (savedComponents) {
+      savedComponents.forEach((componentHTML) => {
+        const component = document.createElement("div");
+        component.className = "component";
+        component.innerHTML = componentHTML;
+
+        // Attach click event listener for existing components
+        component.addEventListener("click", function () {
+          handleComponentSelection(component);
+        });
+
+        pageBuilder.appendChild(component);
+      });
+
+      // Call updateButtonsVisibility to handle button visibility for existing components
+      updateButtonsVisibility();
+    }
+
+    // Attach event listeners after loading components from local storage
+    attachEventListeners();
+  });
+</script>
+
+
+</body>
 </html>

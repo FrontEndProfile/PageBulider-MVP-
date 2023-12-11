@@ -9,133 +9,180 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="bulider.css" />
+    <link rel="stylesheet" href="theme.css" />
 
     <!-- Add this in the head section of your HTML -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 
     <title>Page Builder</title>
   </head>
+
   <body class="admin">
-    <div id="menu-list">
-      <div class="accordion shadow-none" id="accordionPanelsStayOpenExample">
+    <!-- ==== EDIT BUTTON ==== -->
+    <button
+      class="btn btn-light rounded-4 py-3 px-4 editPage d-flex align-items-center justify-content-center"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling"
+    >
+      <img src="./edit.svg" alt="edit" />
+    </button>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button bg-white shadow-none border-bottom"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-Header"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-Header"
-            >
-              Header
-            </button>
-          </h2>
-          <div id="panelsStayOpen-Header" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <li class="dropdown-item" data-component="headerBasic">
-                Navbar Basic
+    <button id="export-button" class="btn btn-secondary export rounded-4 py-3 px-4 d-flex align-items-center justify-content-center position-absolute bottom-0 end-0 m-4">Export Page</button>
 
-                <button class="btn btn-danger btn-sm ms-2" onclick="deleteComponent(this)">Delete</button>
-              </li>
-              <!-- <li class="dropdown-item" data-component="offcanvasBasic">
-                Offcanvas Basic
-                <button class="btn btn-danger btn-sm ms-2" onclick="deleteComponent(this)">Delete</button>
 
-              </li> -->
-              <li class="dropdown-item" data-component="button">
-                button Basic
-                <button class="btn btn-danger btn-sm ms-2" onclick="deleteComponent(this)">Delete</button>
 
-              </li>
-              <li class="dropdown-item" data-component="alert">
-                alert Basic
-                <button class="btn btn-danger btn-sm ms-2" onclick="deleteComponent(this)">Delete</button>
 
-              </li>
+    <!-- =========== offcanvas ===================================== -->
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-scroll="true"
+      data-bs-backdrop="false"
+      tabindex="-1"
+      id="offcanvasScrolling"
+      aria-labelledby="offcanvasScrollingLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+          Select Components
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div id="menu-list" class="w-100">
+          <div
+            class="accordion shadow-none"
+            id="accordionPanelsStayOpenExample"
+          >
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button bg-white shadow-none border-bottom"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-Header"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-Header"
+                >
+                  Header
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-Header"
+                class="accordion-collapse collapse"
+              >
+                <div class="accordion-body">
+                  <div class="dropdown-item" data-component="headerBasic">
+                    Navbar Basic
+                  </div>
+                  <div
+                    class="dropdown-item d-none"
+                    data-component="offcanvasBasic"
+                  >
+                    Offcanvas Basic
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button bg-white shadow-none border-bottom"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-Footer"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-Footer"
+                >
+                  Footer
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-Footer"
+                class="accordion-collapse collapse"
+              >
+                <div class="accordion-body">
+                  <!-- Add more Bootstrap components for Footer as needed -->
+                  <div class="dropdown-item" data-component="footer01">
+                    Footer Simple
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button bg-white shadow-none border-bottom"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-Cards"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-Cards"
+                >
+                  Cards
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-Cards"
+                class="accordion-collapse collapse"
+              >
+                <div class="accordion-body">
+                  <div class="dropdown-item" data-component="cardHri">
+                    Card Basic
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button bg-white shadow-none border-bottom"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-Banners"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-Banners"
+                >
+                  Banners
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-Banners"
+                class="accordion-collapse collapse"
+              >
+                <div class="accordion-body">
+                  <div class="dropdown-item" data-component="heroOne">
+                    Hero Simple
+                  </div>
+                  <div class="dropdown-item" data-component="tableBasic">
+                    Table Basic
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button bg-white shadow-none border-bottom"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-Footer"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-Footer"
-            >
-              Footer
-
-            </button>
-          </h2>
-          <div id="panelsStayOpen-Footer" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <!-- Add more Bootstrap components for Footer as needed -->
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button bg-white shadow-none border-bottom"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-Cards"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-Cards"
-            >
-              Cards
-            </button>
-          </h2>
-          <div id="panelsStayOpen-Cards" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <!-- Add more Bootstrap components for Cards as needed -->
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button bg-white shadow-none border-bottom"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-Banners"
-              aria-expanded="true"
-              aria-controls="panelsStayOpen-Banners"
-            >
-              Banners
-            </button>
-          </h2>
-          <div id="panelsStayOpen-Banners" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <h1>trest</h1>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
+    <!-- =========== offcanvas END ===================================== -->
 
     <div id="page-builder">
       <!-- Components will be added here -->
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
+    <!-- Include Bootstrap JavaScript files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
     ></script>
     <script src="index.js"></script>
-    
-
-
   </body>
 </html>

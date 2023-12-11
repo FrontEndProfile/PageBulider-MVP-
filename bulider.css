@@ -1,50 +1,27 @@
-#menu-list {
-}
 
-#menu-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#menu-list li {
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  text-align: start;
+  box-sizing: border-box;
+}
 .admin {
-  display: flex;
-  align-items: center;
-  grid-column-gap: 12px;
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
-  background-color: rgb(224, 224, 224);
+  height: auto;
 }
 .admin #menu-list {
-  max-width: 280px;
   width: 100%;
-  background-color: rgb(187, 187, 187);
-  padding: 40px 20px;
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
-  height: 98vh;
-  max-height: 98vh;
 }
 .admin #page-builder {
-  background: rgb(255, 255, 255);
   width: 100%;
-  padding: 12px;
-  height: 98vh;
-  max-height: 98vh;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  min-height: 98vh;
+  height: auto;
   position:relative;
 }
 /* Add your CSS styles here */
@@ -85,4 +62,49 @@
 /* Style for the radio button label */
 .radio-label {
   margin-bottom: 10px;
+}
+
+.selected {
+  border: 1px solid #ff1717;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+
+
+.admin-delete img {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(77%) saturate(1%) hue-rotate(53deg) brightness(105%) contrast(101%);
+}
+.component {
+  position: relative;
+}
+.component  .admin-delete {
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  padding: 2px 6px !important;
+  z-index: 999;
+}
+
+.editPage {
+  position: fixed;
+  bottom: 15px;
+  left: 20px;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.editPage img {
+  width: 24px;
+}
+.component {
+  cursor: move;
+  border-radius: 0;
+}
+.dropdown-item {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.export {
+  z-index: 999;
 }
