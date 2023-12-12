@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuList = document.getElementById("menu-list");
   const pageBuilder = document.getElementById("page-builder");
+
+  const editPanel = document.getElementById("edit-panel");
+  const editForm = document.getElementById("edit-form");
+  const editContentTextarea = document.getElementById("edit-content");
+  const saveButton = document.getElementById("save-button");
+
   let selectedComponent = null;
 
   // const generateUniqueId = () => {
@@ -79,20 +85,85 @@ document.addEventListener("DOMContentLoaded", function () {
     handleComponentSelection(component);
   };
 
-  const handleComponentSelection = (component) => {
+  // const handleComponentSelection = (component) => {
+  //   if (selectedComponent) {
+  //     selectedComponent.classList.remove("selected");
+  //     updateButtonsVisibility();
+  //   }
+
+  //   if (selectedComponent !== component) {
+  //     component.classList.add("selected");
+  //     selectedComponent = component;
+  //     updateButtonsVisibility();
+  //   } else {
+  //     selectedComponent = null;
+  //   }
+  // };
+
+  // Function to handle component selection
+  const handleComponentSelection = (componentKey) => {
+    deselectCurrentComponent();
+
+    const component = document.getElementById(componentKey);
+
+    if (selectedComponent !== component) {
+      selectComponent(component);
+      openEditPanel(component, componentKey);
+    } else {
+      selectedComponent = null;
+      closeEditPanel();
+    }
+  };
+
+  // Function to deselect the currently selected component
+  const deselectCurrentComponent = () => {
     if (selectedComponent) {
       selectedComponent.classList.remove("selected");
       updateButtonsVisibility();
     }
+  };
 
-    if (selectedComponent !== component) {
-      component.classList.add("selected");
-      selectedComponent = component;
-      updateButtonsVisibility();
-    } else {
-      selectedComponent = null;
+  // Function to select a component
+  const selectComponent = (component) => {
+    component.classList.add("selected");
+    selectedComponent = component;
+    updateButtonsVisibility();
+  };
+
+  // Function to open the edit panel with the selected component's content
+  const openEditPanel = (component, componentKey) => {
+    if (!editPanel.classList.contains("show")) {
+      const editContent = components[componentKey];
+      editContentTextarea.value = editContent;
+      editPanel.classList.add("show");
     }
   };
+
+  // Function to close the edit panel
+  const closeEditPanel = () => {
+    editPanel.classList.remove("show");
+  };
+
+  // Function to handle save button click
+  saveButton.addEventListener("click", function () {
+    if (selectedComponent) {
+      const componentKey = selectedComponent.id;
+      const editedContent = editContentTextarea.value;
+      components[componentKey] = editedContent;
+      // Save to local storage
+      localStorage.setItem("components", JSON.stringify(components));
+      // Update the component with the edited content
+      selectedComponent.innerHTML = editedContent;
+      closeEditPanel();
+    }
+  });
+
+
+
+
+
+
+
 
   const updateButtonsVisibility = () => {
     const components = document.querySelectorAll(".component");
@@ -188,41 +259,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function downloadPage() {
   // Get the HTML content of the page builder
-  const pageBuilderContent = document.getElementById('page-builder').outerHTML;
+  const pageBuilderContent = document.getElementById("page-builder").outerHTML;
 
   // Add HTML boilerplate and your custom styles
   const htmlContent = `
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-          crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="bulider.css" />
-        <link rel="stylesheet" href="theme.css" />
-      </head>
-      <body class="admin">
-        ${pageBuilderContent}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="bulider.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body class="admin">
+  ${pageBuilderContent}
 
-        <!-- Include Bootstrap JavaScript files -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="index.js"></script>
-      </body>
-    </html>
-  `;
+  <!-- Include Bootstrap JavaScript files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+`;
 
   // Create a Blob containing the HTML content
-  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const blob = new Blob([htmlContent], { type: "text/html" });
 
   // Create a download link and trigger the download
-  const a = document.createElement('a');
+  const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-  a.download = 'page-builder.html';
+  a.download = "page-builder.html";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
